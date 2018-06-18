@@ -21,8 +21,7 @@
 				  :placeholder="placeholder"
 				  :state="state"
 				  :formatter="format"
-				  @input="onInput">
-	</input>
+				  @input="onInput"/>
   </div>
 </template>
 
@@ -65,7 +64,8 @@ ul {
 	left: -1px;
 	background-color: #fff;
 	border: 1px solid #ccc;
-	width: 390px;
+  width: 390px;
+  z-index: 9;
 }
 .dropdown {
 	display: flex;
@@ -96,7 +96,8 @@ ul {
 .flag {
 	width: 25px;
 	margin-right: 5px;
-	height: 100%;
+  height: 100%;
+  max-height: 1.5em;
 }
 .dropdown-menu.show {
   max-height: 300px;
