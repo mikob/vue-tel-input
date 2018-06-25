@@ -264,12 +264,12 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
       }function g(t, e, n) {
         var r = !1;if ((void 0 === e || e < 0) && (e = 0), e > this.length) return "";if ((void 0 === n || n > this.length) && (n = this.length), n <= 0) return "";if (n >>>= 0, e >>>= 0, n <= e) return "";for (t || (t = "utf8");;) {
           switch (t) {case "hex":
-              return M(this, e, n);case "utf8":case "utf-8":
+              return C(this, e, n);case "utf8":case "utf-8":
               return O(this, e, n);case "ascii":
               return T(this, e, n);case "latin1":case "binary":
               return L(this, e, n);case "base64":
               return A(this, e, n);case "ucs2":case "ucs-2":case "utf16le":case "utf-16le":
-              return C(this, e, n);default:
+              return M(this, e, n);default:
               if (r) throw new TypeError("Unknown encoding: " + t);t = (t + "").toLowerCase(), r = !0;}
         }
       }function m(t, e, n) {
@@ -340,11 +340,11 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
         var r = "";n = Math.min(t.length, n);for (var i = e; i < n; ++i) {
           r += String.fromCharCode(t[i]);
         }return r;
-      }function M(t, e, n) {
+      }function C(t, e, n) {
         var r = t.length;(!e || e < 0) && (e = 0), (!n || n < 0 || n > r) && (n = r);for (var i = "", o = e; o < n; ++o) {
           i += Z(t[o]);
         }return i;
-      }function C(t, e, n) {
+      }function M(t, e, n) {
         for (var r = t.slice(e, n), i = "", o = 0; o < r.length; o += 2) {
           i += String.fromCharCode(r[o] + 256 * r[o + 1]);
         }return i;
@@ -693,9 +693,9 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
             if (w) throw E;
           }
         }
-      } else p = s(o);if (!a(p)) return {};var M = h(p);M.extension && (p = M.number, _ = M.extension);var C = u(p, $),
-          I = C.country_phone_code,
-          N = C.number;if (!N) return {};var j = void 0,
+      } else p = s(o);if (!a(p)) return {};var C = h(p);C.extension && (p = C.number, _ = C.extension);var M = u(p, $),
+          I = M.country_phone_code,
+          N = M.number;if (!N) return {};var j = void 0,
           B = void 0,
           P = !1;if (I) {
         if (P = !0, d.country.restrict && I !== Object(b.o)($.countries[d.country.restrict])) return {};B = Object(b.k)(I, $);
@@ -761,7 +761,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
           i = void 0,
           o = void 0;if ("number" == typeof t && (t = String(t)), "string" == typeof t && (r = t), "string" == typeof e ? (i = { country: { restrict: e } }, o = n) : n ? (i = e, o = n) : o = e, !o || !o.countries) throw new Error("Metadata is required");return i = i ? p()({}, z, i) : z, { text: r, options: i, metadata: o };
     }function h(t) {
-      var e = t.search(M);if (e < 0) return {};var n = t.slice(0, e);if (!a(n)) return {};for (var r = t.match(M), i = 1; i < r.length;) {
+      var e = t.search(C);if (e < 0) return {};var n = t.slice(0, e);if (!a(n)) return {};for (var r = t.match(C), i = 1; i < r.length;) {
         if (null != r[i] && r[i].length > 0) return { number: n, extension: r[i] };i++;
       }
     }n.d(e, "a", function () {
@@ -788,10 +788,10 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
         R = "-‐-―−ー－／/．.  ­​⁠　()（）［］\\[\\]~⁓∼～",
         T = "([" + O + "]{1,7})",
         L = ";ext=" + T + "|[  \\t,]*(?:e?xt(?:ensi(?:ó?|ó))?n?|ｅ?ｘｔｎ?|[;,xｘ#＃~～]|int|anexo|ｉｎｔ)[:\\.．]?[  \\t,-]*" + T + "#?|[- ]+([" + O + "]{1,5})#",
-        M = new RegExp("(?:" + L + ")$", "i"),
-        C = "[" + O + "]{" + k + "}",
+        C = new RegExp("(?:" + L + ")$", "i"),
+        M = "[" + O + "]{" + k + "}",
         I = "[" + A + "]{0,1}(?:[" + R + "]*[" + O + "]){3,}[" + R + O + "]*",
-        N = new RegExp("^" + C + "$|^" + I + "(?:" + L + ")?$", "i"),
+        N = new RegExp("^" + M + "$|^" + I + "(?:" + L + ")?$", "i"),
         j = new RegExp("[" + A + O + "]"),
         B = new RegExp("[^" + O + "]+$"),
         P = new RegExp("^[" + A + "]+"),
@@ -861,9 +861,9 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
       return w(t, 7);
     }function L(t) {
       return w(t, 8);
-    }function M(t) {
+    }function C(t) {
       return w(t, 9);
-    }e.o = r, e.l = i, e.i = o, e.m = d, e.n = u, e.j = c, e.g = f, e.a = h, e.c = $, e.d = p, e.f = _, e.e = g, e.h = m, e.b = v, e.k = y, e.z = b, e.p = E, e.q = k, e.v = x, e.t = S, e.s = A, e.x = O, e.w = R, e.r = T, e.y = L, e.u = M;
+    }e.o = r, e.l = i, e.i = o, e.m = d, e.n = u, e.j = c, e.g = f, e.a = h, e.c = $, e.d = p, e.f = _, e.e = g, e.h = m, e.b = v, e.k = y, e.z = b, e.p = E, e.q = k, e.v = x, e.t = S, e.s = A, e.x = O, e.w = R, e.r = T, e.y = L, e.u = C;
   }, function (t, e, n) {
     var r = n(15),
         i = n(39);t.exports = n(11) ? function (t, e, n) {
@@ -1237,7 +1237,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
           m(e, t);
         }, this.writecb = null, this.writelen = 0, this.bufferedRequest = null, this.lastBufferedRequest = null, this.pendingcb = 0, this.prefinished = !1, this.errorEmitted = !1, this.bufferedRequestCount = 0, this.corkedRequestsFree = new o(this);
       }function l(t) {
-        if (R = R || n(5), !(B.call(l, this) || this instanceof R)) return new l(t);this._writableState = new u(t, this), this.writable = !0, t && ("function" == typeof t.write && (this._write = t.write), "function" == typeof t.writev && (this._writev = t.writev), "function" == typeof t.destroy && (this._destroy = t.destroy), "function" == typeof t.final && (this._final = t.final)), C.call(this);
+        if (R = R || n(5), !(B.call(l, this) || this instanceof R)) return new l(t);this._writableState = new u(t, this), this.writable = !0, t && ("function" == typeof t.write && (this._write = t.write), "function" == typeof t.writev && (this._writev = t.writev), "function" == typeof t.destroy && (this._destroy = t.destroy), "function" == typeof t.final && (this._final = t.final)), M.call(this);
       }function c(t, e) {
         var n = new Error("write after end");t.emit("error", n), O(e, n);
       }function f(t, e, n, r) {
@@ -1298,17 +1298,17 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
           var i = r.callback;e.pendingcb--, i(n), r = r.next;
         }e.corkedRequestsFree ? e.corkedRequestsFree.next = t : e.corkedRequestsFree = t;
       }var O = n(22);t.exports = l;var R,
-          T = !e.browser && ["v0.10", "v0.9."].indexOf(e.version.slice(0, 5)) > -1 ? r : O;l.WritableState = u;var L = n(14);L.inherits = n(3);var M = { deprecate: n(124) },
-          C = n(58),
+          T = !e.browser && ["v0.10", "v0.9."].indexOf(e.version.slice(0, 5)) > -1 ? r : O;l.WritableState = u;var L = n(14);L.inherits = n(3);var C = { deprecate: n(124) },
+          M = n(58),
           I = n(23).Buffer,
           N = i.Uint8Array || function () {},
-          j = n(59);L.inherits(l, C), u.prototype.getBuffer = function () {
+          j = n(59);L.inherits(l, M), u.prototype.getBuffer = function () {
         for (var t = this.bufferedRequest, e = []; t;) {
           e.push(t), t = t.next;
         }return e;
       }, function () {
         try {
-          Object.defineProperty(u.prototype, "buffer", { get: M.deprecate(function () {
+          Object.defineProperty(u.prototype, "buffer", { get: C.deprecate(function () {
               return this.getBuffer();
             }, "_writableState.buffer is deprecated. Use _writableState.getBuffer instead.", "DEP0003") });
         } catch (t) {}
@@ -1381,19 +1381,19 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
           var A = s.indexOf(g[S]);-1 !== A && (-1 === x || A < x) && (x = A);
         }var O, R;R = -1 === x ? s.lastIndexOf("@") : s.lastIndexOf("@", x), -1 !== R && (O = s.slice(0, R), s = s.slice(R + 1), this.auth = decodeURIComponent(O)), x = -1;for (var S = 0; S < _.length; S++) {
           var A = s.indexOf(_[S]);-1 !== A && (-1 === x || A < x) && (x = A);
-        }-1 === x && (x = s.length), this.host = s.slice(0, x), s = s.slice(x), this.parseHost(), this.hostname = this.hostname || "";var T = "[" === this.hostname[0] && "]" === this.hostname[this.hostname.length - 1];if (!T) for (var L = this.hostname.split(/\./), S = 0, M = L.length; S < M; S++) {
-          var C = L[S];if (C && !C.match(m)) {
-            for (var I = "", N = 0, j = C.length; N < j; N++) {
-              C.charCodeAt(N) > 127 ? I += "x" : I += C[N];
+        }-1 === x && (x = s.length), this.host = s.slice(0, x), s = s.slice(x), this.parseHost(), this.hostname = this.hostname || "";var T = "[" === this.hostname[0] && "]" === this.hostname[this.hostname.length - 1];if (!T) for (var L = this.hostname.split(/\./), S = 0, C = L.length; S < C; S++) {
+          var M = L[S];if (M && !M.match(m)) {
+            for (var I = "", N = 0, j = M.length; N < j; N++) {
+              M.charCodeAt(N) > 127 ? I += "x" : I += M[N];
             }if (!I.match(m)) {
               var B = L.slice(0, S),
                   P = L.slice(S + 1),
-                  U = C.match(v);U && (B.push(U[1]), P.unshift(U[2])), P.length && (s = "/" + P.join(".") + s), this.hostname = B.join(".");break;
+                  U = M.match(v);U && (B.push(U[1]), P.unshift(U[2])), P.length && (s = "/" + P.join(".") + s), this.hostname = B.join(".");break;
             }
           }
         }this.hostname.length > 255 ? this.hostname = "" : this.hostname = this.hostname.toLowerCase(), T || (this.hostname = d.toASCII(this.hostname));var z = this.port ? ":" + this.port : "",
             D = this.hostname || "";this.host = D + z, this.href += this.host, T && (this.hostname = this.hostname.substr(1, this.hostname.length - 2), "/" !== s[0] && (s = "/" + s));
-      }if (!y[$]) for (var S = 0, M = p.length; S < M; S++) {
+      }if (!y[$]) for (var S = 0, C = p.length; S < C; S++) {
         var F = p[S];if (-1 !== s.indexOf(F)) {
           var Z = encodeURIComponent(F);Z === F && (Z = escape(F)), s = s.split(F).join(Z);
         }
@@ -1540,12 +1540,12 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
             e = [R(t.getHours()), R(t.getMinutes()), R(t.getSeconds())].join(":");return [t.getDate(), N[t.getMonth()], e].join(" ");
       }function L(t, e) {
         return Object.prototype.hasOwnProperty.call(t, e);
-      }var M = /%[sdj%]/g;e.format = function (t) {
+      }var C = /%[sdj%]/g;e.format = function (t) {
         if (!v(t)) {
           for (var e = [], n = 0; n < arguments.length; n++) {
             e.push(i(arguments[n]));
           }return e.join(" ");
-        }for (var n = 1, r = arguments, o = r.length, a = String(t).replace(M, function (t) {
+        }for (var n = 1, r = arguments, o = r.length, a = String(t).replace(C, function (t) {
           if ("%%" === t) return "%";if (n >= o) return t;switch (t) {case "%s":
               return String(r[n++]);case "%d":
               return Number(r[n++]);case "%j":
@@ -1566,9 +1566,9 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
         }if (b(t.process)) return function () {
           return e.deprecate(n, i).apply(this, arguments);
         };if (!0 === r.noDeprecation) return n;var a = !1;return o;
-      };var C,
+      };var M,
           I = {};e.debuglog = function (t) {
-        if (b(C) && (C = r.env.NODE_DEBUG || ""), t = t.toUpperCase(), !I[t]) if (new RegExp("\\b" + t + "\\b", "i").test(C)) {
+        if (b(M) && (M = r.env.NODE_DEBUG || ""), t = t.toUpperCase(), !I[t]) if (new RegExp("\\b" + t + "\\b", "i").test(M)) {
           var n = r.pid;I[t] = function () {
             var r = e.format.apply(e, arguments);console.error("%s %d: %s", t, n, r);
           };
@@ -1585,7 +1585,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
     "use strict";
     var r = n(71),
         i = n(110),
-        o = n(111);e.a = { name: "vue-tel-input", props: { value: { type: String }, placeholder: { default: "Enter a phone number", type: String } }, mounted: function mounted() {
+        o = n(111);e.a = { name: "vue-tel-input", props: { value: { type: String }, placeholder: { default: "Enter a phone number", type: String }, preferredCountries: { default: [], type: Array } }, mounted: function mounted() {
         var t = this;Object(o.a)().then(function (e) {
           t.activeCountry = i.a.find(function (t) {
             return t.iso2 === e;
@@ -1597,6 +1597,12 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
         return { phone: "", allCountries: i.a, activeCountry: { iso2: "" }, open: !1 };
       }, computed: { mode: function mode() {
           return this.phone ? "+" === this.phone[0] ? "code" : "0" === this.phone[0] ? "prefix" : "normal" : "";
+        }, sortedCountries: function sortedCountries() {
+          for (var t = [], e = 0; e < this.preferredCountries.length; e++) {
+            for (var n = 0; n < i.a.length; n++) {
+              i.a[n].iso2 === this.preferredCountries[e].toUpperCase() && t.push(i.a[n]);
+            }
+          }return t = t.concat(i.a);
         }, formattedResult: function formattedResult() {
           if (!this.mode || !this.allCountries) return "";var t = this.phone;if ("code" === this.mode) {
             var e = new r.a();e.input(this.phone), this.activeCountry = this.allCountries.find(function (t) {
@@ -1986,10 +1992,10 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
       }function a(t, e, n) {
         if ("function" == typeof t.prependListener) return t.prependListener(e, n);t._events && t._events[e] ? I(t._events[e]) ? t._events[e].unshift(n) : t._events[e] = [n, t._events[e]] : t.on(e, n);
       }function s(t, e) {
-        C = C || n(5), t = t || {}, this.objectMode = !!t.objectMode, e instanceof C && (this.objectMode = this.objectMode || !!t.readableObjectMode);var r = t.highWaterMark,
+        M = M || n(5), t = t || {}, this.objectMode = !!t.objectMode, e instanceof M && (this.objectMode = this.objectMode || !!t.readableObjectMode);var r = t.highWaterMark,
             i = this.objectMode ? 16 : 16384;this.highWaterMark = r || 0 === r ? r : i, this.highWaterMark = Math.floor(this.highWaterMark), this.buffer = new Z(), this.length = 0, this.pipes = null, this.pipesCount = 0, this.flowing = null, this.ended = !1, this.endEmitted = !1, this.reading = !1, this.sync = !0, this.needReadable = !1, this.emittedReadable = !1, this.readableListening = !1, this.resumeScheduled = !1, this.destroyed = !1, this.defaultEncoding = t.defaultEncoding || "utf8", this.awaitDrain = 0, this.readingMore = !1, this.decoder = null, this.encoding = null, t.encoding && (F || (F = n(60).StringDecoder), this.decoder = new F(t.encoding), this.encoding = t.encoding);
       }function d(t) {
-        if (C = C || n(5), !(this instanceof d)) return new d(t);this._readableState = new s(t, this), this.readable = !0, t && ("function" == typeof t.read && (this._read = t.read), "function" == typeof t.destroy && (this._destroy = t.destroy)), j.call(this);
+        if (M = M || n(5), !(this instanceof d)) return new d(t);this._readableState = new s(t, this), this.readable = !0, t && ("function" == typeof t.read && (this._read = t.read), "function" == typeof t.destroy && (this._destroy = t.destroy)), j.call(this);
       }function u(t, e, n, r, o) {
         var a = t._readableState;if (null === e) a.reading = !1, p(t, a);else {
           var s;o || (s = c(a, e)), s ? t.emit("error", s) : a.objectMode || e && e.length > 0 ? ("string" == typeof e || a.objectMode || Object.getPrototypeOf(e) === B.prototype || (e = i(e)), r ? a.endEmitted ? t.emit("error", new Error("stream.unshift() after end event")) : l(t, a, e, !0) : a.ended ? t.emit("error", new Error("stream.push() after EOF")) : (a.reading = !1, a.decoder && !n ? (e = a.decoder.write(e), a.objectMode || 0 !== e.length ? l(t, a, e, !1) : m(t, a)) : l(t, a, e, !1))) : r || (a.reading = !1);
@@ -2011,11 +2017,11 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
           }e.ended = !0, _(t);
         }
       }function _(t) {
-        var e = t._readableState;e.needReadable = !1, e.emittedReadable || (D("emitReadable", e.flowing), e.emittedReadable = !0, e.sync ? M(g, t) : g(t));
+        var e = t._readableState;e.needReadable = !1, e.emittedReadable || (D("emitReadable", e.flowing), e.emittedReadable = !0, e.sync ? C(g, t) : g(t));
       }function g(t) {
         D("emit readable"), t.emit("readable"), k(t);
       }function m(t, e) {
-        e.readingMore || (e.readingMore = !0, M(v, t, e));
+        e.readingMore || (e.readingMore = !0, C(v, t, e));
       }function v(t, e) {
         for (var n = e.length; !e.reading && !e.flowing && !e.ended && e.length < e.highWaterMark && (D("maybeReadMore read 0"), t.read(0), n !== e.length);) {
           n = e.length;
@@ -2027,7 +2033,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
       }function b(t) {
         D("readable nexttick read 0"), t.read(0);
       }function w(t, e) {
-        e.resumeScheduled || (e.resumeScheduled = !0, M(E, t, e));
+        e.resumeScheduled || (e.resumeScheduled = !0, C(E, t, e));
       }function E(t, e) {
         e.reading || (D("resume read 0"), t.read(0)), e.resumeScheduled = !1, e.awaitDrain = 0, t.emit("resume"), k(t), e.flowing && !e.reading && t.read(0);
       }function k(t) {
@@ -2055,14 +2061,14 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
           }++i;
         }return e.length -= i, n;
       }function R(t) {
-        var e = t._readableState;if (e.length > 0) throw new Error('"endReadable()" called on non-empty stream');e.endEmitted || (e.ended = !0, M(T, e, t));
+        var e = t._readableState;if (e.length > 0) throw new Error('"endReadable()" called on non-empty stream');e.endEmitted || (e.ended = !0, C(T, e, t));
       }function T(t, e) {
         t.endEmitted || 0 !== t.length || (t.endEmitted = !0, e.readable = !1, e.emit("end"));
       }function L(t, e) {
         for (var n = 0, r = t.length; n < r; n++) {
           if (t[n] === e) return n;
         }return -1;
-      }var M = n(22);t.exports = d;var C,
+      }var C = n(22);t.exports = d;var M,
           I = n(54);d.ReadableState = s;var N = (n(32).EventEmitter, function (t, e) {
         return t.listeners(e).length;
       }),
@@ -2114,7 +2120,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
             h.pipes = t;break;case 1:
             h.pipes = [h.pipes, t];break;default:
             h.pipes.push(t);}h.pipesCount += 1, D("pipe count=%d opts=%j", h.pipesCount, e);var $ = (!e || !1 !== e.end) && t !== r.stdout && t !== r.stderr,
-            p = $ ? i : c;h.endEmitted ? M(p) : f.once("end", p), t.on("unpipe", n);var _ = y(f);t.on("drain", _);var g = !1,
+            p = $ ? i : c;h.endEmitted ? C(p) : f.once("end", p), t.on("unpipe", n);var _ = y(f);t.on("drain", _);var g = !1,
             m = !1;return f.on("data", s), a(t, "error", d), t.once("close", u), t.once("finish", l), t.emit("pipe", f), h.flowing || (D("pipe resume"), f.resume()), t;
       }, d.prototype.unpipe = function (t) {
         var e = this._readableState,
@@ -2126,7 +2132,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
         }var a = L(e.pipes, t);return -1 === a ? this : (e.pipes.splice(a, 1), e.pipesCount -= 1, 1 === e.pipesCount && (e.pipes = e.pipes[0]), t.emit("unpipe", this, n), this);
       }, d.prototype.on = function (t, e) {
         var n = j.prototype.on.call(this, t, e);if ("data" === t) !1 !== this._readableState.flowing && this.resume();else if ("readable" === t) {
-          var r = this._readableState;r.endEmitted || r.readableListening || (r.readableListening = r.needReadable = !0, r.emittedReadable = !1, r.reading ? r.length && _(this) : M(b, this));
+          var r = this._readableState;r.endEmitted || r.readableListening || (r.readableListening = r.needReadable = !0, r.emittedReadable = !1, r.reading ? r.length && _(this) : C(b, this));
         }return n;
       }, d.prototype.addListener = d.prototype.on, d.prototype.resume = function () {
         var t = this._readableState;return t.flowing || (D("resume"), t.flowing = !0, w(this, t)), this;
@@ -3164,7 +3170,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
     (function (t, r) {
       var i;(function (o) {
         function a(t) {
-          throw new RangeError(M[t]);
+          throw new RangeError(C[t]);
         }function s(t, e) {
           for (var n = t.length, r = []; n--;) {
             r[n] = e(t[n]);
@@ -3185,9 +3191,9 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
         }function f(t, e) {
           return t + 22 + 75 * (t < 26) - ((0 != e) << 5);
         }function h(t, e, n) {
-          var r = 0;for (t = n ? I(t / x) : t >> 1, t += I(t / e); t > C * E >> 1; r += b) {
-            t = I(t / C);
-          }return I(r + (C + 1) * t / (t + k));
+          var r = 0;for (t = n ? I(t / x) : t >> 1, t += I(t / e); t > M * E >> 1; r += b) {
+            t = I(t / M);
+          }return I(r + (M + 1) * t / (t + k));
         }function $(t) {
           var e,
               n,
@@ -3260,8 +3266,8 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
             R = /^xn--/,
             T = /[^\x20-\x7E]/,
             L = /[\x2E\u3002\uFF0E\uFF61]/g,
-            M = { overflow: "Overflow: input needs wider integers to process", "not-basic": "Illegal input >= 0x80 (not a basic code point)", "invalid-input": "Invalid input" },
-            C = b - w,
+            C = { overflow: "Overflow: input needs wider integers to process", "not-basic": "Illegal input >= 0x80 (not a basic code point)", "invalid-input": "Invalid input" },
+            M = b - w,
             I = Math.floor,
             N = String.fromCharCode;v = { version: "1.4.1", ucs2: { decode: u, encode: l }, decode: $, encode: p, toASCII: g, toUnicode: _ }, void 0 !== (i = function () {
           return v;
@@ -3611,7 +3617,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
     }function u(t, e) {
       t.pending_buf[t.pending++] = e >>> 8 & 255, t.pending_buf[t.pending++] = 255 & e;
     }function l(t, e, n, r) {
-      var i = t.avail_in;return i > r && (i = r), 0 === i ? 0 : (t.avail_in -= i, T.arraySet(e, t.input, t.next_in, i, n), 1 === t.state.wrap ? t.adler = M(t.adler, e, i, n) : 2 === t.state.wrap && (t.adler = C(t.adler, e, i, n)), t.next_in += i, t.total_in += i, i);
+      var i = t.avail_in;return i > r && (i = r), 0 === i ? 0 : (t.avail_in -= i, T.arraySet(e, t.input, t.next_in, i, n), 1 === t.state.wrap ? t.adler = C(t.adler, e, i, n) : 2 === t.state.wrap && (t.adler = M(t.adler, e, i, n)), t.next_in += i, t.total_in += i, i);
     }function c(t, e) {
       var n,
           r,
@@ -3708,25 +3714,25 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
     }function x(t, e) {
       return k(t, e, J, tt, et, V);
     }function S(t, e) {
-      var n, s, l, c;if (!t || !t.state || e > U || e < 0) return t ? r(t, F) : F;if (s = t.state, !t.output || !t.input && 0 !== t.avail_in || s.status === gt && e !== P) return r(t, 0 === t.avail_out ? G : F);if (s.strm = t, n = s.last_flush, s.last_flush = e, s.status === ct) if (2 === s.wrap) t.adler = 0, d(s, 31), d(s, 139), d(s, 8), s.gzhead ? (d(s, (s.gzhead.text ? 1 : 0) + (s.gzhead.hcrc ? 2 : 0) + (s.gzhead.extra ? 4 : 0) + (s.gzhead.name ? 8 : 0) + (s.gzhead.comment ? 16 : 0)), d(s, 255 & s.gzhead.time), d(s, s.gzhead.time >> 8 & 255), d(s, s.gzhead.time >> 16 & 255), d(s, s.gzhead.time >> 24 & 255), d(s, 9 === s.level ? 2 : s.strategy >= K || s.level < 2 ? 4 : 0), d(s, 255 & s.gzhead.os), s.gzhead.extra && s.gzhead.extra.length && (d(s, 255 & s.gzhead.extra.length), d(s, s.gzhead.extra.length >> 8 & 255)), s.gzhead.hcrc && (t.adler = C(t.adler, s.pending_buf, s.pending, 0)), s.gzindex = 0, s.status = ft) : (d(s, 0), d(s, 0), d(s, 0), d(s, 0), d(s, 0), d(s, 9 === s.level ? 2 : s.strategy >= K || s.level < 2 ? 4 : 0), d(s, wt), s.status = _t);else {
+      var n, s, l, c;if (!t || !t.state || e > U || e < 0) return t ? r(t, F) : F;if (s = t.state, !t.output || !t.input && 0 !== t.avail_in || s.status === gt && e !== P) return r(t, 0 === t.avail_out ? G : F);if (s.strm = t, n = s.last_flush, s.last_flush = e, s.status === ct) if (2 === s.wrap) t.adler = 0, d(s, 31), d(s, 139), d(s, 8), s.gzhead ? (d(s, (s.gzhead.text ? 1 : 0) + (s.gzhead.hcrc ? 2 : 0) + (s.gzhead.extra ? 4 : 0) + (s.gzhead.name ? 8 : 0) + (s.gzhead.comment ? 16 : 0)), d(s, 255 & s.gzhead.time), d(s, s.gzhead.time >> 8 & 255), d(s, s.gzhead.time >> 16 & 255), d(s, s.gzhead.time >> 24 & 255), d(s, 9 === s.level ? 2 : s.strategy >= K || s.level < 2 ? 4 : 0), d(s, 255 & s.gzhead.os), s.gzhead.extra && s.gzhead.extra.length && (d(s, 255 & s.gzhead.extra.length), d(s, s.gzhead.extra.length >> 8 & 255)), s.gzhead.hcrc && (t.adler = M(t.adler, s.pending_buf, s.pending, 0)), s.gzindex = 0, s.status = ft) : (d(s, 0), d(s, 0), d(s, 0), d(s, 0), d(s, 0), d(s, 9 === s.level ? 2 : s.strategy >= K || s.level < 2 ? 4 : 0), d(s, wt), s.status = _t);else {
         var f = J + (s.w_bits - 8 << 4) << 8,
             h = -1;h = s.strategy >= K || s.level < 2 ? 0 : s.level < 6 ? 1 : 6 === s.level ? 2 : 3, f |= h << 6, 0 !== s.strstart && (f |= lt), f += 31 - f % 31, s.status = _t, u(s, f), 0 !== s.strstart && (u(s, t.adler >>> 16), u(s, 65535 & t.adler)), t.adler = 1;
       }if (s.status === ft) if (s.gzhead.extra) {
-        for (l = s.pending; s.gzindex < (65535 & s.gzhead.extra.length) && (s.pending !== s.pending_buf_size || (s.gzhead.hcrc && s.pending > l && (t.adler = C(t.adler, s.pending_buf, s.pending - l, l)), a(t), l = s.pending, s.pending !== s.pending_buf_size));) {
+        for (l = s.pending; s.gzindex < (65535 & s.gzhead.extra.length) && (s.pending !== s.pending_buf_size || (s.gzhead.hcrc && s.pending > l && (t.adler = M(t.adler, s.pending_buf, s.pending - l, l)), a(t), l = s.pending, s.pending !== s.pending_buf_size));) {
           d(s, 255 & s.gzhead.extra[s.gzindex]), s.gzindex++;
-        }s.gzhead.hcrc && s.pending > l && (t.adler = C(t.adler, s.pending_buf, s.pending - l, l)), s.gzindex === s.gzhead.extra.length && (s.gzindex = 0, s.status = ht);
+        }s.gzhead.hcrc && s.pending > l && (t.adler = M(t.adler, s.pending_buf, s.pending - l, l)), s.gzindex === s.gzhead.extra.length && (s.gzindex = 0, s.status = ht);
       } else s.status = ht;if (s.status === ht) if (s.gzhead.name) {
         l = s.pending;do {
-          if (s.pending === s.pending_buf_size && (s.gzhead.hcrc && s.pending > l && (t.adler = C(t.adler, s.pending_buf, s.pending - l, l)), a(t), l = s.pending, s.pending === s.pending_buf_size)) {
+          if (s.pending === s.pending_buf_size && (s.gzhead.hcrc && s.pending > l && (t.adler = M(t.adler, s.pending_buf, s.pending - l, l)), a(t), l = s.pending, s.pending === s.pending_buf_size)) {
             c = 1;break;
           }c = s.gzindex < s.gzhead.name.length ? 255 & s.gzhead.name.charCodeAt(s.gzindex++) : 0, d(s, c);
-        } while (0 !== c);s.gzhead.hcrc && s.pending > l && (t.adler = C(t.adler, s.pending_buf, s.pending - l, l)), 0 === c && (s.gzindex = 0, s.status = $t);
+        } while (0 !== c);s.gzhead.hcrc && s.pending > l && (t.adler = M(t.adler, s.pending_buf, s.pending - l, l)), 0 === c && (s.gzindex = 0, s.status = $t);
       } else s.status = $t;if (s.status === $t) if (s.gzhead.comment) {
         l = s.pending;do {
-          if (s.pending === s.pending_buf_size && (s.gzhead.hcrc && s.pending > l && (t.adler = C(t.adler, s.pending_buf, s.pending - l, l)), a(t), l = s.pending, s.pending === s.pending_buf_size)) {
+          if (s.pending === s.pending_buf_size && (s.gzhead.hcrc && s.pending > l && (t.adler = M(t.adler, s.pending_buf, s.pending - l, l)), a(t), l = s.pending, s.pending === s.pending_buf_size)) {
             c = 1;break;
           }c = s.gzindex < s.gzhead.comment.length ? 255 & s.gzhead.comment.charCodeAt(s.gzindex++) : 0, d(s, c);
-        } while (0 !== c);s.gzhead.hcrc && s.pending > l && (t.adler = C(t.adler, s.pending_buf, s.pending - l, l)), 0 === c && (s.status = pt);
+        } while (0 !== c);s.gzhead.hcrc && s.pending > l && (t.adler = M(t.adler, s.pending_buf, s.pending - l, l)), 0 === c && (s.status = pt);
       } else s.status = pt;if (s.status === pt && (s.gzhead.hcrc ? (s.pending + 2 > s.pending_buf_size && a(t), s.pending + 2 <= s.pending_buf_size && (d(s, 255 & t.adler), d(s, t.adler >> 8 & 255), t.adler = 0, s.status = _t)) : s.status = _t), 0 !== s.pending) {
         if (a(t), 0 === t.avail_out) return s.last_flush = -1, z;
       } else if (0 === t.avail_in && i(e) <= i(n) && e !== P) return r(t, G);if (s.status === gt && 0 !== t.avail_in) return r(t, G);if (0 !== t.avail_in || 0 !== s.lookahead || e !== N && s.status !== gt) {
@@ -3743,7 +3749,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
           d,
           u,
           l,
-          c = e.length;if (!t || !t.state) return F;if (n = t.state, 2 === (a = n.wrap) || 1 === a && n.status !== ct || n.lookahead) return F;for (1 === a && (t.adler = M(t.adler, e, c, 0)), n.wrap = 0, c >= n.w_size && (0 === a && (o(n.head), n.strstart = 0, n.block_start = 0, n.insert = 0), l = new T.Buf8(n.w_size), T.arraySet(l, e, c - n.w_size, n.w_size, 0), e = l, c = n.w_size), s = t.avail_in, d = t.next_in, u = t.input, t.avail_in = c, t.next_in = 0, t.input = e, f(n); n.lookahead >= st;) {
+          c = e.length;if (!t || !t.state) return F;if (n = t.state, 2 === (a = n.wrap) || 1 === a && n.status !== ct || n.lookahead) return F;for (1 === a && (t.adler = C(t.adler, e, c, 0)), n.wrap = 0, c >= n.w_size && (0 === a && (o(n.head), n.strstart = 0, n.block_start = 0, n.insert = 0), l = new T.Buf8(n.w_size), T.arraySet(l, e, c - n.w_size, n.w_size, 0), e = l, c = n.w_size), s = t.avail_in, d = t.next_in, u = t.input, t.avail_in = c, t.next_in = 0, t.input = e, f(n); n.lookahead >= st;) {
         r = n.strstart, i = n.lookahead - (st - 1);do {
           n.ins_h = (n.ins_h << n.hash_shift ^ n.window[r + st - 1]) & n.hash_mask, n.prev[r & n.w_mask] = n.head[n.ins_h], n.head[n.ins_h] = r, r++;
         } while (--i);n.strstart = r, n.lookahead = st - 1, f(n);
@@ -3751,8 +3757,8 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
     }var R,
         T = n(24),
         L = n(145),
-        M = n(64),
-        C = n(65),
+        C = n(64),
+        M = n(65),
         I = n(146),
         N = 0,
         j = 1,
@@ -3900,7 +3906,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
     }function _(t) {
       t.bi_valid > 8 ? s(t, t.bi_buf) : t.bi_valid > 0 && (t.pending_buf[t.pending++] = t.bi_buf), t.bi_buf = 0, t.bi_valid = 0;
     }function g(t, e, n, r) {
-      _(t), r && (s(t, n), s(t, ~n)), M.arraySet(t.pending_buf, t.window, e, n, t.pending), t.pending += n;
+      _(t), r && (s(t, n), s(t, ~n)), C.arraySet(t.pending_buf, t.window, e, n, t.pending), t.pending += n;
     }function m(t, e, n, r) {
       var i = 2 * e,
           o = 2 * n;return t[i] < t[o] || t[i] === t[o] && r[e] <= r[n];
@@ -3979,11 +3985,11 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
     }function T(t, e, n, r) {
       var i,
           o,
-          a = 0;t.level > 0 ? (t.strm.data_type === j && (t.strm.data_type = S(t)), b(t, t.l_desc), b(t, t.d_desc), a = k(t), i = t.opt_len + 3 + 7 >>> 3, (o = t.static_len + 3 + 7 >>> 3) <= i && (i = o)) : i = o = n + 5, n + 4 <= i && -1 !== e ? O(t, e, n, r) : t.strategy === C || o === i ? (d(t, (P << 1) + (r ? 1 : 0), 3), y(t, rt, it)) : (d(t, (U << 1) + (r ? 1 : 0), 3), x(t, t.l_desc.max_code + 1, t.d_desc.max_code + 1, a + 1), y(t, t.dyn_ltree, t.dyn_dtree)), p(t), r && _(t);
+          a = 0;t.level > 0 ? (t.strm.data_type === j && (t.strm.data_type = S(t)), b(t, t.l_desc), b(t, t.d_desc), a = k(t), i = t.opt_len + 3 + 7 >>> 3, (o = t.static_len + 3 + 7 >>> 3) <= i && (i = o)) : i = o = n + 5, n + 4 <= i && -1 !== e ? O(t, e, n, r) : t.strategy === M || o === i ? (d(t, (P << 1) + (r ? 1 : 0), 3), y(t, rt, it)) : (d(t, (U << 1) + (r ? 1 : 0), 3), x(t, t.l_desc.max_code + 1, t.d_desc.max_code + 1, a + 1), y(t, t.dyn_ltree, t.dyn_dtree)), p(t), r && _(t);
     }function L(t, e, n) {
       return t.pending_buf[t.d_buf + 2 * t.last_lit] = e >>> 8 & 255, t.pending_buf[t.d_buf + 2 * t.last_lit + 1] = 255 & e, t.pending_buf[t.l_buf + t.last_lit] = 255 & n, t.last_lit++, 0 === e ? t.dyn_ltree[2 * n]++ : (t.matches++, e--, t.dyn_ltree[2 * (at[n] + D + 1)]++, t.dyn_dtree[2 * a(e)]++), t.last_lit === t.lit_bufsize - 1;
-    }var M = n(24),
-        C = 4,
+    }var C = n(24),
+        M = 4,
         I = 0,
         N = 1,
         j = 2,
@@ -4021,13 +4027,13 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
     }function i() {
       this.mode = 0, this.last = !1, this.wrap = 0, this.havedict = !1, this.flags = 0, this.dmax = 0, this.check = 0, this.total = 0, this.head = null, this.wbits = 0, this.wsize = 0, this.whave = 0, this.wnext = 0, this.window = null, this.hold = 0, this.bits = 0, this.length = 0, this.offset = 0, this.extra = 0, this.lencode = null, this.distcode = null, this.lenbits = 0, this.distbits = 0, this.ncode = 0, this.nlen = 0, this.ndist = 0, this.have = 0, this.next = null, this.lens = new m.Buf16(320), this.work = new m.Buf16(288), this.lendyn = null, this.distdyn = null, this.sane = 0, this.back = 0, this.was = 0;
     }function o(t) {
-      var e;return t && t.state ? (e = t.state, t.total_in = t.total_out = e.total = 0, t.msg = "", e.wrap && (t.adler = 1 & e.wrap), e.mode = B, e.last = 0, e.havedict = 0, e.dmax = 32768, e.head = null, e.hold = 0, e.bits = 0, e.lencode = e.lendyn = new m.Buf32(pt), e.distcode = e.distdyn = new m.Buf32(_t), e.sane = 1, e.back = -1, R) : M;
+      var e;return t && t.state ? (e = t.state, t.total_in = t.total_out = e.total = 0, t.msg = "", e.wrap && (t.adler = 1 & e.wrap), e.mode = B, e.last = 0, e.havedict = 0, e.dmax = 32768, e.head = null, e.hold = 0, e.bits = 0, e.lencode = e.lendyn = new m.Buf32(pt), e.distcode = e.distdyn = new m.Buf32(_t), e.sane = 1, e.back = -1, R) : C;
     }function a(t) {
-      var e;return t && t.state ? (e = t.state, e.wsize = 0, e.whave = 0, e.wnext = 0, o(t)) : M;
+      var e;return t && t.state ? (e = t.state, e.wsize = 0, e.whave = 0, e.wnext = 0, o(t)) : C;
     }function s(t, e) {
-      var n, r;return t && t.state ? (r = t.state, e < 0 ? (n = 0, e = -e) : (n = 1 + (e >> 4), e < 48 && (e &= 15)), e && (e < 8 || e > 15) ? M : (null !== r.window && r.wbits !== e && (r.window = null), r.wrap = n, r.wbits = e, a(t))) : M;
+      var n, r;return t && t.state ? (r = t.state, e < 0 ? (n = 0, e = -e) : (n = 1 + (e >> 4), e < 48 && (e &= 15)), e && (e < 8 || e > 15) ? C : (null !== r.window && r.wbits !== e && (r.window = null), r.wrap = n, r.wbits = e, a(t))) : C;
     }function d(t, e) {
-      var n, r;return t ? (r = new i(), t.state = r, r.window = null, n = s(t, e), n !== R && (t.state = null), n) : M;
+      var n, r;return t ? (r = new i(), t.state = r, r.window = null, n = s(t, e), n !== R && (t.state = null), n) : C;
     }function u(t) {
       return d(t, gt);
     }function l(t) {
@@ -4074,7 +4080,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
           xt,
           St = 0,
           At = new m.Buf8(4),
-          Ot = [16, 17, 18, 0, 8, 7, 9, 6, 10, 5, 11, 4, 12, 3, 13, 2, 14, 1, 15];if (!t || !t.state || !t.output || !t.input && 0 !== t.avail_in) return M;n = t.state, n.mode === Y && (n.mode = W), s = t.next_out, o = t.output, u = t.avail_out, a = t.next_in, i = t.input, d = t.avail_in, f = n.hold, h = n.bits, $ = d, p = u, Et = R;t: for (;;) {
+          Ot = [16, 17, 18, 0, 8, 7, 9, 6, 10, 5, 11, 4, 12, 3, 13, 2, 14, 1, 15];if (!t || !t.state || !t.output || !t.input && 0 !== t.avail_in) return C;n = t.state, n.mode === Y && (n.mode = W), s = t.next_out, o = t.output, u = t.avail_out, a = t.next_in, i = t.input, d = t.avail_in, f = n.hold, h = n.bits, $ = d, p = u, Et = R;t: for (;;) {
         switch (n.mode) {case B:
             if (0 === n.wrap) {
               n.mode = W;break;
@@ -4255,18 +4261,18 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
               }f = 0, h = 0;
             }n.mode = ct;case ct:
             Et = T;break t;case ft:
-            Et = C;break t;case ht:
+            Et = M;break t;case ht:
             return I;case $t:default:
-            return M;}
+            return C;}
       }return t.next_out = s, t.avail_out = u, t.next_in = a, t.avail_in = d, n.hold = f, n.bits = h, (n.wsize || p !== t.avail_out && n.mode < ft && (n.mode < ut || e !== S)) && c(t, t.output, t.next_out, p - t.avail_out) ? (n.mode = ht, I) : ($ -= t.avail_in, p -= t.avail_out, t.total_in += $, t.total_out += p, n.total += p, n.wrap && p && (t.adler = n.check = n.flags ? y(n.check, o, p, t.next_out - p) : v(n.check, o, p, t.next_out - p)), t.data_type = n.bits + (n.last ? 64 : 0) + (n.mode === Y ? 128 : 0) + (n.mode === nt || n.mode === X ? 256 : 0), (0 === $ && 0 === p || e === S) && Et === R && (Et = N), Et);
     }function h(t) {
-      if (!t || !t.state) return M;var e = t.state;return e.window && (e.window = null), t.state = null, R;
+      if (!t || !t.state) return C;var e = t.state;return e.window && (e.window = null), t.state = null, R;
     }function $(t, e) {
-      var n;return t && t.state ? (n = t.state, 0 == (2 & n.wrap) ? M : (n.head = e, e.done = !1, R)) : M;
+      var n;return t && t.state ? (n = t.state, 0 == (2 & n.wrap) ? C : (n.head = e, e.done = !1, R)) : C;
     }function p(t, e) {
       var n,
           r,
-          i = e.length;return t && t.state ? (n = t.state, 0 !== n.wrap && n.mode !== K ? M : n.mode === K && (r = 1, (r = v(r, e, i, 0)) !== n.check) ? C : c(t, e, i, i) ? (n.mode = ht, I) : (n.havedict = 1, R)) : M;
+          i = e.length;return t && t.state ? (n = t.state, 0 !== n.wrap && n.mode !== K ? C : n.mode === K && (r = 1, (r = v(r, e, i, 0)) !== n.check) ? M : c(t, e, i, i) ? (n.mode = ht, I) : (n.havedict = 1, R)) : C;
     }var _,
         g,
         m = n(24),
@@ -4283,8 +4289,8 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
         R = 0,
         T = 1,
         L = 2,
-        M = -2,
-        C = -3,
+        C = -2,
+        M = -3,
         I = -4,
         N = -5,
         j = 8,
@@ -4405,8 +4411,8 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
           R = 0,
           T = 0,
           L = 0,
-          M = 0,
-          C = null,
+          C = 0,
+          M = null,
           I = 0,
           N = new r.Buf16(16),
           j = new r.Buf16(16),
@@ -4421,19 +4427,19 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
         j[E + 1] = j[E] + N[E];
       }for (k = 0; k < d; k++) {
         0 !== e[n + k] && (c[j[e[n + k]]++] = k);
-      }if (0 === t ? (C = B = c, m = 19) : 1 === t ? (C = i, I -= 257, B = o, P -= 257, m = 256) : (C = a, B = s, m = -1), M = 0, k = 0, E = x, g = l, O = A, R = 0, p = -1, L = 1 << A, _ = L - 1, 1 === t && L > 852 || 2 === t && L > 592) return 1;for (;;) {
-        v = E - R, c[k] < m ? (y = 0, b = c[k]) : c[k] > m ? (y = B[P + c[k]], b = C[I + c[k]]) : (y = 96, b = 0), h = 1 << E - R, $ = 1 << O, x = $;do {
-          $ -= h, u[g + (M >> R) + $] = v << 24 | y << 16 | b | 0;
-        } while (0 !== $);for (h = 1 << E - 1; M & h;) {
+      }if (0 === t ? (M = B = c, m = 19) : 1 === t ? (M = i, I -= 257, B = o, P -= 257, m = 256) : (M = a, B = s, m = -1), C = 0, k = 0, E = x, g = l, O = A, R = 0, p = -1, L = 1 << A, _ = L - 1, 1 === t && L > 852 || 2 === t && L > 592) return 1;for (;;) {
+        v = E - R, c[k] < m ? (y = 0, b = c[k]) : c[k] > m ? (y = B[P + c[k]], b = M[I + c[k]]) : (y = 96, b = 0), h = 1 << E - R, $ = 1 << O, x = $;do {
+          $ -= h, u[g + (C >> R) + $] = v << 24 | y << 16 | b | 0;
+        } while (0 !== $);for (h = 1 << E - 1; C & h;) {
           h >>= 1;
-        }if (0 !== h ? (M &= h - 1, M += h) : M = 0, k++, 0 == --N[E]) {
+        }if (0 !== h ? (C &= h - 1, C += h) : C = 0, k++, 0 == --N[E]) {
           if (E === S) break;E = e[n + c[k]];
-        }if (E > A && (M & _) !== p) {
+        }if (E > A && (C & _) !== p) {
           for (0 === R && (R = A), g += x, O = E - R, T = 1 << O; O + R < S && !((T -= N[O + R]) <= 0);) {
             O++, T <<= 1;
-          }if (L += 1 << O, 1 === t && L > 852 || 2 === t && L > 592) return 1;p = M & _, u[p] = A << 24 | O << 16 | g - l | 0;
+          }if (L += 1 << O, 1 === t && L > 852 || 2 === t && L > 592) return 1;p = C & _, u[p] = A << 24 | O << 16 | g - l | 0;
         }
-      }return 0 !== M && (u[g + M] = E - R << 24 | 64 << 16 | 0), f.bits = A, 0;
+      }return 0 !== C && (u[g + C] = E - R << 24 | 64 << 16 | 0), f.bits = A, 0;
     };
   }, function (t, e, n) {
     "use strict";
@@ -4557,8 +4563,10 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
     var r = function r() {
       var t = this,
           e = t.$createElement,
-          n = t._self._c || e;return n("div", { staticClass: "vue-tel-input" }, [n("div", { directives: [{ name: "click-outside", rawName: "v-click-outside", value: t.clickedOutside, expression: "clickedOutside" }], staticClass: "dropdown", class: { open: t.open }, on: { click: t.toggleDropdown } }, [n("span", { staticClass: "selection" }, [n("img", { staticClass: "flag", attrs: { src: t.activeCountry.icon } }), t._v(" "), n("span", { staticClass: "dropdown-arrow" }, [t._v("\n\t\t" + t._s(t.open ? "▲" : "▼") + "\n\t\t")])]), t._v(" "), n("ul", { directives: [{ name: "show", rawName: "v-show", value: t.open, expression: "open" }] }, t._l(t.allCountries, function (e) {
-        return n("li", { key: e.iso2, staticClass: "dropdown-item", on: { click: function click(n) {
+          n = t._self._c || e;return n("div", { staticClass: "vue-tel-input" }, [n("div", { directives: [{ name: "click-outside", rawName: "v-click-outside", value: t.clickedOutside, expression: "clickedOutside" }], staticClass: "dropdown", class: { open: t.open }, on: { click: t.toggleDropdown } }, [n("span", { staticClass: "selection" }, [n("img", { staticClass: "flag", attrs: { src: t.activeCountry.icon } }), t._v(" "), n("span", { staticClass: "dropdown-arrow" }, [t._v("\n\t\t" + t._s(t.open ? "▲" : "▼") + "\n\t\t")])]), t._v(" "), n("ul", { directives: [{ name: "show", rawName: "v-show", value: t.open, expression: "open" }] }, t._l(t.sortedCountries, function (e, r) {
+        return n("li", { key: e.iso2, staticClass: "dropdown-item", class: { "last-preferred": t.preferredCountries.length && r === t.preferredCountries.length - 1, preferred: !!~t.preferredCountries.map(function (t) {
+              return t.toUpperCase();
+            }).indexOf(e.iso2) }, on: { click: function click(n) {
               t.choose(e);
             } } }, [n("img", { staticStyle: { width: "25px", "margin-right": "5px" }, attrs: { src: e.icon } }), t._v(" "), n("strong", [t._v(t._s(e.name) + " ")]), t._v(" "), n("span", [t._v("+" + t._s(e.dialCode))])]);
       }))]), t._v(" "), n("input", { directives: [{ name: "model", rawName: "v-model", value: t.phone, expression: "phone" }], attrs: { placeholder: t.placeholder, state: t.state, formatter: t.format }, domProps: { value: t.phone }, on: { input: [function (e) {

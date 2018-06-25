@@ -8,8 +8,8 @@
 		</span>
 	</span>
 	  <ul v-show="open">
-		  <li class="dropdown-item" v-for="pb in allCountries"
-						   :key="pb['iso2']"
+		  <li class="dropdown-item" v-for="(pb, index) in sortedCountries" :class="{'last-preferred': preferredCountries.length && index === preferredCountries.length - 1, preferred: !!~preferredCountries.map(c => c.toUpperCase()).indexOf(pb.iso2)}"
+						   :key="pb.iso2"
 						   @click="choose(pb)">
 			<img :src="pb.icon" style="width: 25px; margin-right: 5px" />
 			<strong>{{ pb.name }} </strong>
@@ -29,6 +29,10 @@
 <style scoped>
 :local {
 	--border-radius: 2px;
+}
+
+li.last-preferred {
+	border-bottom: 1px solid #cacaca;
 }
 .selection {
 	cursor: pointer;
@@ -94,10 +98,10 @@ ul {
 	background-color: #f3f3f3;
 }
 .flag {
-	width: 1.4em;
+	width: 25px;
 	margin-left: 5px;
 	margin-right: 8px;
-	height: 1em;
+	height: 16px;
 }
 .dropdown-menu.show {
   max-height: 300px;
@@ -119,7 +123,11 @@ export default {
 	placeholder: {
 	  default: "Enter a phone number",
 	  type: String,
-	}
+	},
+	preferredCountries: {
+	  default: [],
+	  type: Array,
+	},
   },
   mounted() {
     getCountry().then((res) => {
@@ -153,6 +161,18 @@ export default {
       }
       return 'normal';
     },
+	sortedCountries() {
+		let countries = [];
+		for (let i = 0; i < this.preferredCountries.length; i++) {
+			for (let k = 0; k < allCountries.length; k++) {
+				if (allCountries[k].iso2 === this.preferredCountries[i].toUpperCase()) {
+					countries.push(allCountries[k]);
+				}
+			}
+		}
+		countries = countries.concat(allCountries);
+		return countries;
+	},
     formattedResult() {
       // Calculate phone number based on mode
       if (!this.mode || !this.allCountries) {
