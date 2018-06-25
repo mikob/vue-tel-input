@@ -94,7 +94,7 @@ ul {
 	background-color: #f3f3f3;
 }
 .flag {
-	width: 25px;
+	width: 1.4em;
 	margin-left: 5px;
 	margin-right: 8px;
 	height: 1em;
